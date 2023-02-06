@@ -2,8 +2,9 @@ import Image from "./Image";
 import "../../styles/cardItem.css";
 import Description from "./Description";
 import ButtonDetalles from "./Buttondetalles";
-import ButttonAddCart from "./ButtonAddCart";
+import AddItemButton from "./AddItemButton";
 import { Link } from "react-router-dom";
+import React, { useContext } from 'react';
 
 const Item = (props) => {
   return (
@@ -19,7 +20,7 @@ const Item = (props) => {
           <ButtonDetalles txt="Ver detalles" />
         </Link>
 
-        <ButttonAddCart />
+        <AddItemButton />
       </div>
     </div>
   );

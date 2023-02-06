@@ -2,11 +2,15 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import fetchSimultion from "../../utils/fetchSimulation";
 import productos from "../../utils/products";
-import {ItemList} from "../componentsitems/ItemList"
+import { ItemList } from "../componentsitems/ItemList"
 
 const ItemListContainer = () => {
   const [datos, setDatos] = useState([]);
   let { idCategory } = useParams();
+
+  useEffect(() => {
+    document.title = "Todos los productos";
+  });
 
   useEffect(() => {
     if (idCategory == undefined) {

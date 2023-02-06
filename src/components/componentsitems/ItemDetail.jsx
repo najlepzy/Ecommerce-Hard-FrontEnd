@@ -1,9 +1,20 @@
 import Image from "./Image";
 import Description from "./Description";
-import AddCantCart from "./AddCantCart";
+import ItemCount from "./ItemCount";
 import ButtonDetalles from "./Buttondetalles";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ datos }) => {
+  const [inputType, setInputType] = useState('input')
+  const [quantity, setQuantity] = useState(0)
+  
+  const ItemCount = inputType === 'input' ? InputCount : ButtonCount
+  const handleOnAdd = (quantity) => {
+    console.log("Agregue al carrito", quantity);
+
+    setQuantity(parseInt(quantity));
+  };
   return (
     <div className="detailsItem">
       <>
@@ -18,7 +29,14 @@ const ItemDetail = ({ datos }) => {
             precio={datos.price}
           />
           <div className="buttons">
-            <AddCantCart cant={5} stock={datos.stock} />
+            {
+              quantity > 0 ? (
+                <Link to='/cart'>Terminar compra</Link>
+              ):(
+                <ItemCount stock={datos.stock} onAdd={handleOnAdd}/>
+              )
+            }
+           
             <ButtonDetalles txt="Agregar al carrito" />
           </div>
         </div>

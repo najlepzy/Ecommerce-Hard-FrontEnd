@@ -4,10 +4,15 @@ import "../../styles/detailsItem.css";
 import fetchSimultion from "../../utils/fetchSimulation";
 import productos from "../../utils/products";
 import ItemDetail from "./ItemDetail";
+ 
 
 const ItemDetailContainer = () => {
   const [datos, setDatos] = useState([]);
   const { idItem } = useParams();
+
+  useEffect(() => {
+    document.title = 'Detalle del producto'
+  },[])
 
   useEffect(() => {
     fetchSimultion(

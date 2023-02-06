@@ -102,7 +102,7 @@
     margin: 10px 0;
 }
 
-.detailsItem .containerRigth .buttons .addCantCart {
+.detailsItem .containerRigth .buttons .ItemCount {
     width: 48%;
     display: flex;
     justify-content: center;
@@ -112,12 +112,12 @@
     height: 60px;
 }
 
-.detailsItem .containerRigth .buttons .addCantCart span {
+.detailsItem .containerRigth .buttons .ItemCount span {
     font-weight: 20px;
     margin: 0 10px;
 }
 
-.detailsItem .containerRigth .buttons .addCantCart div {
+.detailsItem .containerRigth .buttons .ItemCount div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,8 +126,8 @@
 
 
 
-.detailsItem .containerRigth .buttons .addCantCart div #quitar,
-.detailsItem .containerRigth .buttons .addCantCart div #aumentar {
+.detailsItem .containerRigth .buttons .ItemCount div #quitar,
+.detailsItem .containerRigth .buttons .ItemCount div #aumentar {
     background-color: #5b00fb;
     border: none;
     color: white;

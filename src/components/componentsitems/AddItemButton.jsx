@@ -1,6 +1,6 @@
 import cartWhite from "../../img/cart-white.svg";
 
-const ButtonAddCart = () => {
+const AddItemButton = () => {
   return (
     <button id="addCart">
       <img src={cartWhite} alt="add"></img>
@@ -8,4 +8,4 @@ const ButtonAddCart = () => {
   );
 };
 
-export default ButtonAddCart;
+export default AddItemButton;
