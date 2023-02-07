@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ItemCount = ({ stock, props, onAdd }) => {
+const ItemCount = ({ stock, txt, onAdd }) => {
   const [count, setCount] = useState(1);
   const decrease = () => {
     setCount(count - 1);
@@ -11,7 +11,7 @@ const ItemCount = ({ stock, props, onAdd }) => {
   return (
     <div className="ItemCount">
       <span>Quiero:</span>
-      <div>
+      <div className="d">
         <button id="quitar" onClick={decrease} disabled={count === 1}>
           -
         </button>
@@ -19,7 +19,7 @@ const ItemCount = ({ stock, props, onAdd }) => {
         <button id="aumentar" onClick={increase} disabled={count === stock}>
           +
         </button>
-        <button onClick={onAdd} id="detalles">{props.txt}</button>;
+        <button onClick={()=> onAdd(count)} id="detalles">{txt}</button>;
       </div>
     </div>
   );
