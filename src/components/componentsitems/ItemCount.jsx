@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ItemCount = ({ stock }) => {
+const ItemCount = ({ stock, props, onAdd }) => {
   const [count, setCount] = useState(1);
   const decrease = () => {
     setCount(count - 1);
@@ -19,14 +19,10 @@ const ItemCount = ({ stock }) => {
         <button id="aumentar" onClick={increase} disabled={count === stock}>
           +
         </button>
+        <button onClick={onAdd} id="detalles">{props.txt}</button>;
       </div>
     </div>
   );
 };
-
-export const GoToCart = (props) => {
-  return <button id="detalles">{props.txt}</button>;
-};
-
 
 export default ItemCount;
