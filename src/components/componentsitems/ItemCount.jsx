@@ -19,8 +19,8 @@ const ItemCount = ({ stock, txt, onAdd }) => {
         <button id="aumentar" onClick={increase} disabled={count === stock}>
           +
         </button>
-        <button onClick={()=> onAdd(count)} id="detalles">{txt}</button>;
       </div>
+        <button onClick={()=> onAdd(count)} id="detalles">{txt}</button>    
     </div>
   );
 };

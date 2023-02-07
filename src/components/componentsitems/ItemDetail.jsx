@@ -30,7 +30,7 @@ const ItemDetail = ({ datos, setCart }) => {
             <ItemCount
               stock={datos.stock}
               onAdd={handleOnAdd}
-              txt="Agregar al carrito"
+              txt="Agregar al carrito"  
             />
           </div>
         </div>

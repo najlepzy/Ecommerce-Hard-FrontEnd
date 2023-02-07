@@ -16,7 +16,7 @@ const Item = (props) => {
       />
       <div className="buttons">
         <Link to={`/item/${props.id}`}>
-          <ItemCount txt="Ver detalles" />
+          <button id="detalles">Ver detalles</button>
         </Link>
 
         <AddItemButton />

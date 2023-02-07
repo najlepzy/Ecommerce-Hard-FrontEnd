@@ -20,6 +20,7 @@ function App() {
             path="/item/:idItem"
             element={<ItemDetailContainer setCart={setCart} />}
           />
+          <Route exact path="/cart" element={<Cart />} />
           <Route path="/category/:idCategory" element={<ItemListContainer />} />
         </Routes>
       </CartProvider>
