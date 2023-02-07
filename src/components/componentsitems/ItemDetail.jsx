@@ -1,7 +1,7 @@
 import Image from "./Image";
 import Description from "./Description";
 import ItemCount from "./ItemCount";
-import GoToCart from "./goToCart";
+import { GoToCart } from "./ItemCount";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext";

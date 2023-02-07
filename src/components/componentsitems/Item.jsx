@@ -3,7 +3,7 @@ import "../../styles/cardItem.css";
 import Description from "./Description";
 import AddItemButton from "./AddItemButton";
 import { Link } from "react-router-dom";
-import GoToCart from "./goToCart";
+import { GoToCart } from "./ItemCount";
 
 const Item = (props) => {
   return (

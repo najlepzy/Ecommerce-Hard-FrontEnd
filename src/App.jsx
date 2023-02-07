@@ -12,8 +12,8 @@ function App() {
   console.log(cart);
   return (
     <BrowserRouter>
-      <NavBar />
       <CartProvider value>
+        <NavBar />
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
           <Route
