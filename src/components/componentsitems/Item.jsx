@@ -3,7 +3,7 @@ import "../../styles/cardItem.css";
 import Description from "./Description";
 import AddItemButton from "./AddItemButton";
 import { Link } from "react-router-dom";
-import goToCart from "./goToCart";
+import GoToCart from "./goToCart";
 
 const Item = (props) => {
   return (
@@ -16,7 +16,7 @@ const Item = (props) => {
       />
       <div className="buttons">
         <Link to={`/item/${props.id}`}>
-          <goToCart txt="Ver detalles" />
+          <GoToCart txt="Ver detalles" />
         </Link>
 
         <AddItemButton />

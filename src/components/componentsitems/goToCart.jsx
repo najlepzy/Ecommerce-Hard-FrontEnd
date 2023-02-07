@@ -1,5 +1,5 @@
-const goToCart = (props) => {
+const GoToCart = (props) => {
   return <button id="detalles">{props.txt}</button>;
 };
 
-export default goToCart;
+export default GoToCart;
