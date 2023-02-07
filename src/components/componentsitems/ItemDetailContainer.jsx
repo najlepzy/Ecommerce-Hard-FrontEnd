@@ -6,7 +6,7 @@ import productos from "../../utils/products";
 import ItemDetail from "./ItemDetail";
  
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({setCart}) => {
   const [datos, setDatos] = useState([]);
   const { idItem } = useParams();
 
@@ -24,7 +24,7 @@ const ItemDetailContainer = () => {
   }, [idItem]);
   return (
     <>
-      <ItemDetail datos={datos} />
+      <ItemDetail datos={datos} setCart={setCart}/>
     </>
   );
 };

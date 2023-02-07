@@ -1,4 +1,5 @@
 import cart from "../../img/cart.svg";
+import CartContext from "../../Context/CartContext";
 
 const CartWidget = () => {
   return (

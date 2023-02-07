@@ -1,10 +1,9 @@
 import Image from "./Image";
 import "../../styles/cardItem.css";
 import Description from "./Description";
-import ButtonDetalles from "./Buttondetalles";
 import AddItemButton from "./AddItemButton";
 import { Link } from "react-router-dom";
-import React, { useContext } from 'react';
+import goToCart from "./goToCart";
 
 const Item = (props) => {
   return (
@@ -17,7 +16,7 @@ const Item = (props) => {
       />
       <div className="buttons">
         <Link to={`/item/${props.id}`}>
-          <ButtonDetalles txt="Ver detalles" />
+          <goToCart txt="Ver detalles" />
         </Link>
 
         <AddItemButton />

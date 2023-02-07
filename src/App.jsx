@@ -1,23 +1,29 @@
 import "./style.css";
+import React from "react";
 import NavBar from "./components/header/NavBar";
 import ItemListContainer from "./components/componentsitems/ItemListContainer ";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ItemDetailContainer from "./components/componentsitems/ItemDetailContainer";
-import Skeleton from "react-loading-skeleton";
-import CartProvider, { CartContext } from "./Context/CartContext";
+import { useState } from "react";   
+import CartProvider from "./Context/CartContext";
 
 function App() {
+  const [cart, setCart] = useState([]);
+  console.log(cart);
   return (
-    <CartContext.Provider value = 'Cart'>
-      <BrowserRouter>
-        <NavBar />
+    <BrowserRouter>
+      <NavBar />
+      <CartProvider value>
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
-          <Route path="/item/:idItem" element={<ItemDetailContainer />} />
+          <Route
+            path="/item/:idItem"
+            element={<ItemDetailContainer setCart={setCart} />}
+          />
           <Route path="/category/:idCategory" element={<ItemListContainer />} />
         </Routes>
-      </BrowserRouter>
-    </CartContext.Provider>
+      </CartProvider>
+    </BrowserRouter>
   );
 }
 

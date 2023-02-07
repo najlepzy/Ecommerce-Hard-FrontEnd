@@ -1,19 +1,18 @@
 import Image from "./Image";
 import Description from "./Description";
 import ItemCount from "./ItemCount";
-import ButtonDetalles from "./Buttondetalles";
+import goToCart from "./goToCart";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../../Context/CartContext";
 
-const ItemDetail = ({ datos }) => {
-  const [inputType, setInputType] = useState('input')
-  const [quantity, setQuantity] = useState(0)
-  
-  const ItemCount = inputType === 'input' ? InputCount : ButtonCount
+const ItemDetail = ({ datos, setCart }) => {
+  const [ButtonDetalles, setGoToCart] = useState(false);
+  const { addProduct } = useCartContext();
+
   const handleOnAdd = (quantity) => {
-    console.log("Agregue al carrito", quantity);
-
-    setQuantity(parseInt(quantity));
+    setGoToCart(true);
+    addProduct(datos, quantity);
   };
   return (
     <div className="detailsItem">
@@ -29,15 +28,9 @@ const ItemDetail = ({ datos }) => {
             precio={datos.price}
           />
           <div className="buttons">
-            {
-              quantity > 0 ? (
-                <Link to='/cart'>Terminar compra</Link>
-              ):(
-                <ItemCount stock={datos.stock} onAdd={handleOnAdd}/>
-              )
-            }
-           
-            <ButtonDetalles txt="Agregar al carrito" />
+            <ItemCount stock={datos.stock} onAdd={handleOnAdd} />
+
+            <goToCart txt='Agregar al carrito'/>
           </div>
         </div>
       </>
