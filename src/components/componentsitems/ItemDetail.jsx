@@ -6,10 +6,9 @@ import ImageLoader from "../loaders/ImageLoader"
 import ItemCount from "../componentsitems/ItemCount"
 import LineLoader from "../loaders/LineLoader"
 
-const ItemDetail = ({ datos, setCart }) => {
+const ItemDetail = ({ datos}) => {
   const [goToCart, setGoToCart] = useState(false);
   const { addProduct } = useCartContext();
-  console.log(datos)
   const handleOnAdd = (quantity) => {
     setGoToCart(true);
     addProduct(datos, quantity);

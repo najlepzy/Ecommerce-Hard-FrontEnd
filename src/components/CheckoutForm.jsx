@@ -14,7 +14,6 @@ function sendUpdateItemStockRequests(cart){
   // Avoids error while being called before clearCart.
   return new Promise((resolve, reject)=>{
     const temp_cart = [...cart];
-    console.log(temp_cart)
     temp_cart.forEach(item => {
       const db = getFirestore();
       const item_doc = doc(db, 'Productos', item.id)
@@ -67,7 +66,6 @@ const Form = () => {
         quantity: product.quantity,
       })),
     };
-    console.log(order)
     const db = getFirestore();
     const ordersCollection = collection(db, "Orders");
     const result = await addDoc(ordersCollection, order);
@@ -76,7 +74,6 @@ const Form = () => {
     setPhone("")
     setAddress("")
     await sendUpdateItemStockRequests(cart)
-    console.log("CALLING CLEAR CART")
     clearCart()
     displayAlert(result);
   };

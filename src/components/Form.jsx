@@ -35,9 +35,7 @@ const Form = () => {
       })),
       total: totalPrice(),
     };
-    console.log(Order);
     const id = await handleClick(Order);
-    console.log("ID ORDER:", id);
     showAlert();
   };
 

@@ -10,21 +10,16 @@ const ItemDetailContainer = ({setCart}) => {
 
   useEffect(() => {
     document.title = "Todos los productos";
-    let productId = window.location.pathname.substring(6,window.location.pathname.length)
-    console.log(productId)
     const db = getFirestore();
-    const query_doc = doc(db, 'Productos', productId)
-    // const q = query(productos_ref, where('id', '==', productId));
+    const query_doc = doc(db, 'Productos', idItem)
     getDoc(query_doc).then(res => {
       // Agrega id a los datos del producto recibidos de firebase
       let temp_datos = res.data()
       // Id necesario para enviar al checkout y registrar en DB.
-      temp_datos['id'] = productId
+      temp_datos['id'] = idItem
       setDatos(temp_datos)
     })
   }, [idItem]);
-  console.log(datos)
-
   return (
     <>
       <ItemDetail datos={datos} setCart={setCart}/>

@@ -3,8 +3,6 @@ import { useParams } from "react-router-dom";
 import { ItemList } from "../componentsitems/ItemList"
 import { getFirestore, collection, getDocs, query, where } from "firebase/firestore"
 
-// Funcion usada en el useEffect.
-// Devuelve el nombre para la pestaña dependiendo de la categoria usada.
 function categoriTitleName(cat){
   switch(cat){
     case 'procesador':
@@ -23,8 +21,7 @@ const ItemListContainer = () => {
   let { idCategory } = useParams();
 
   useEffect(() => {
-    // Titulo de pestaña
-    if(idCategory) // Con categoria... 
+    if(idCategory)
       document.title = categoriTitleName(idCategory);
     else
       document.title = "Todos los productos";
@@ -40,7 +37,6 @@ const ItemListContainer = () => {
       setDatos(res.docs.map(product => ({id: product.id, ...product.data() })))
     })
   }, [idCategory])
-  console.log(datos)
 
   return (
     <ItemList datos={datos}/>
