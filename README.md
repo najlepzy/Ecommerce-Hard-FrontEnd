@@ -18,9 +18,9 @@ _La app esta desarrollada en React por lo que debe inicializarse desde la termin
 
 ## LIBRERÍAS 
 
-React-router: Librería para el ruteo de la SPA.
-Firebase: Paquete utilizado para integrar el servicio de almacenamiento de datos en Google Cloud Platform permitiendo conectar a una base de datos NoSQL y asi almacenar datos de producto y ordenes de clientes. 
-Sweetalert2-react-content: Fue utilizada unicamente para dar una alerta cuando la orden de compra fue realizada.
-React-loading-skeleton: Paquete que añade componentes animados de carga listos para usar rapidamente.
+- React-router: Librería para el ruteo de la SPA.
+- Firebase: Paquete utilizado para integrar el servicio de almacenamiento de datos en Google Cloud Platform permitiendo conectar a una base de datos NoSQL y asi almacenar datos de producto y ordenes de clientes. 
+- Sweetalert2-react-content: Fue utilizada unicamente para dar una alerta cuando la orden de compra fue realizada.
+- React-loading-skeleton: Paquete que añade componentes animados de carga listos para usar rapidamente.
 
 
