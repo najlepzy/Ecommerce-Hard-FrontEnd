@@ -3,23 +3,38 @@ import "../../styles/cardItem.css";
 import Description from "./Description";
 import AddItemButton from "./AddItemButton";
 import { Link } from "react-router-dom";
-import ItemCount from "./ItemCount";
+import { useCartContext } from "../../Context/CartContext";
 
-const Item = (props) => {
+// data productData = {id,imagen,title,cantidad,precio}
+// data referencing Product to render.
+const Item = ({productData, viewCartMode}) => {
+  const { removeProduct } = useCartContext();
+  const handleRemove = (productData) => {
+    removeProduct(productData.id);
+  };
+  
+
   return (
     <div className="cardItem">
-      <Image imagen={props.imagen} />
+      <Image imagen={productData.imageProduct} />
       <Description
-        title={props.title}
-        cantidad={props.cantidad}
-        precio={props.precio}
+        title={productData.title}
+        cantidad={viewCartMode ? productData.quantity : productData.stock}
+        precio={productData.price}
       />
       <div className="buttons">
-        <Link to={`/item/${props.id}`}>
-          <button id="detalles">Ver detalles</button>
+        <Link to={`/item/${productData.id}`}>
+          <button className="detalles">Ver detalles</button>
         </Link>
 
-        <AddItemButton />
+        {
+          viewCartMode ?
+          <button className="detalles-quitar" onClick={()=>{handleRemove(productData)}}>
+              Quitar
+          </button>
+          :
+          <AddItemButton product={productData}/>
+        }
       </div>
     </div>
   );

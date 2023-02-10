@@ -1,19 +1,17 @@
 import "../../styles/containerCardsItems.css";
 import Item from "../componentsitems/Item";
+import ItemLoader from "../loaders/ItemLoader"
+
 
 export const ItemList = ({ datos }) => {
   return (
-    <div className="containerCardItems">
-      {datos.map((product) => (
-        <Item
-          key={product.id}
-          id={product.id}
-          imagen={product.imageProduct.firtsImage}
-          title={product.title}
-          cantidad={product.stock}
-          precio={product.price}
-        />
-      ))}
-    </div>
+      <ItemLoader innerClass={'containerCardItems'} loading={datos.length == 0} amount={10} lines={3}>
+          {datos.map((product) => ( 
+            <Item
+              key={product.id}
+              productData={product}
+            />
+          ))}
+      </ItemLoader>
   );
 };

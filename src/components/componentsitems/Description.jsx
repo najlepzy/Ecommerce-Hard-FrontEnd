@@ -1,4 +1,6 @@
+import Parse from "../../utils/Parse"
 const Description = (props) => {
+
   return (
     <div className="cardDescription">
       <h3 className="title">{props.title}</h3>
@@ -10,7 +12,7 @@ const Description = (props) => {
 
       <span className="cant">Cantidad: {props.cantidad} unidades</span>
 
-      <span className="precio">${props.precio}</span>
+      <span className="precio">{Parse.price(props.precio)}</span>
     </div>
   );
 };

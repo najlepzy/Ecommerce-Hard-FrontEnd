@@ -7,6 +7,8 @@ import ItemDetailContainer from "./components/componentsitems/ItemDetailContaine
 import { useState } from "react";   
 import CartProvider from "./Context/CartContext";
 import { Cart } from "./components/componentsitems/Cart";
+import Form from "./components/CheckoutForm";
+import NotFound from "./components/NotFound404"
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -23,6 +25,8 @@ function App() {
           />
           <Route exact path="/cart" element={<Cart/>} />
           <Route path="/category/:idCategory" element={<ItemListContainer />} />
+          <Route exact path="/checkout" element={<Form />} />
+          <Route path='*' element={<NotFound />}/>
         </Routes>
       </CartProvider>
     </BrowserRouter>
@@ -30,3 +34,4 @@ function App() {
 }
 
 export default App;
+

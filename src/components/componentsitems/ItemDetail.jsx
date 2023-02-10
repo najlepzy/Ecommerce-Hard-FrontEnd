@@ -1,31 +1,42 @@
 import Image from "./Image";
 import Description from "./Description";
-import ItemCount from "./ItemCount";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext";
+import ImageLoader from "../loaders/ImageLoader"
+import ItemCount from "../componentsitems/ItemCount"
+import LineLoader from "../loaders/LineLoader"
 
 const ItemDetail = ({ datos, setCart }) => {
-  const [setGoToCart] = useState(false);
+  const [goToCart, setGoToCart] = useState(false);
   const { addProduct } = useCartContext();
-
+  console.log(datos)
   const handleOnAdd = (quantity) => {
     setGoToCart(true);
     addProduct(datos, quantity);
+    window.location.assign('/cart')
   };
+  
   return (
     <div className="detailsItem">
       <>
         <div className="containerLeft">
-          <Image imagen={datos.imageProduct?.firtsImage} />
+          <ImageLoader 
+            loading={datos.imageProduct == undefined}
+            width={500}
+            height={312}
+          >
+            <Image imagen={datos.imageProduct} />
+          </ImageLoader>
         </div>
         <div className="containerRigth">
-          <Description
-            title={datos.title}
-            parrafo={datos.description}
-            cantidad={datos.stock}
-            precio={datos.price}
-          />
+          <LineLoader loading={datos.title == undefined} amount={1} lines={5} height={33} width={511} innerStyle={{margin: '12px'}}>
+            <Description
+              title={datos.title}
+              parrafo={datos.description}
+              cantidad={datos.stock}
+              precio={datos.price}
+            />
+          </LineLoader>
           <div className="buttons">
             <ItemCount
               stock={datos.stock}

@@ -1,0 +1,35 @@
+#formTitle{
+    color: #5b00fb;
+    margin-bottom: 1.6rem;
+}
+
+.checkout-form {
+    padding: 20px;
+    margin: 20px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.checkout-field{
+    padding: 0.5rem;
+    width: 100%;
+    margin: 0.8rem 0px;
+}
+
+#checkout-submit{
+    padding: 12px 5px;
+    width: 160px;
+    border-radius: 15px;
+    background-color: #5b00fb;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+}
+#checkout-submit:hover{
+    filter: brightness(0.89);
+    cursor: pointer;
+}

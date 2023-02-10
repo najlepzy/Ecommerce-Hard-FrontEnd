@@ -21,13 +21,12 @@ const CartProvider = ({ children }) => {
     if (isInCart(item.id)) {
       setCart(
         cart.map((product) => {
-          return product.id === item.id
-            ? { ...product, quantity: product.quantity + quantity }
-            : product;
+          return product.id === item.id ? { ...product, quantity: product.quantity + quantity } : product;
         })
       );
     } else {
       setCart([...cart, { ...item, quantity }]);
+      console.log(cart)
     }
   };
 
@@ -35,8 +34,12 @@ const CartProvider = ({ children }) => {
     return cart.reduce((prev, act) => prev + act.quantity * act.price, 0);
   };
 
-  const totalProducts = () =>
-    cart.reduce((acum, productAct) => acum + productAct.quantity, 0);
+  const totalProducts = () =>{
+    let total = 0;
+    // Uses cart array in State memory to it is updated automatically when a new item is added.
+    cart.forEach((e)=>total += e.quantity)
+    return total;
+  }
 
   const clearCart = () => setCart([]);
 

@@ -139,6 +139,7 @@
 
 .detailsItem .containerRigth .buttons #detalles {
     width: 48%;
+    height: 2rem;
     background-color: #5b00fb;
     border-radius: 50px;
     color: white;
