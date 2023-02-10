@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../../styles/detailsItem.css";
 import ItemDetail from "./ItemDetail";
-import { getFirestore, collection, getDocs, doc, getDoc, query, where } from "firebase/firestore"
+import { getFirestore,doc, getDoc} from "firebase/firestore"
  
 const ItemDetailContainer = ({setCart}) => {
   const [datos, setDatos] = useState([]);
