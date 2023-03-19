@@ -20,22 +20,32 @@ export const Cart = () => {
 
   return (
     <>
-      <div className="container" style={{minHeight: "100vh"}}>
-        <div className="containerCardItems" style={{display:'flex', flexDirection:'row'}}>
+      <div className="container" style={{ minHeight: "100vh" }}>
+        <div
+          className="containerCardItems"
+          style={{ display: "flex", flexDirection: "row" }}
+        >
           {cart.map((datos) => (
-            <Item key={datos.id} productData={datos} viewCartMode={true}/>
+            <Item key={datos.id} productData={datos} viewCartMode={true} />
           ))}
         </div>
         <h2 style={{ margin: "1em", color: "black" }}>
           <b>
             {" "}
             Total:{" "}
-            <span style={{ color: "blue" }}>
-              {Parse.price(totalPrice())}{" "} 
+            <span style={{ color: "#5b00fb" }}>
+              {Parse.price(totalPrice())}{" "}
             </span>
           </b>
         </h2>
-        <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '20vh'}}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "20vh",
+          }}
+        >
           <Link to="/checkout" id="completePurchaseBtn">
             Finalizar compra
           </Link>

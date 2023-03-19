@@ -24,7 +24,7 @@ function sendUpdateItemStockRequests(cart){
 }
 
 const Form = () => {
-  const { cart, totalPrice, clearCart} = useCartContext();
+  const {cart, totalPrice, clearCart} = useCartContext();
   const [fieldName, setName] = useState("");
   const [fieldEmail, setEmail] = useState("");
   const [fieldPhone, setPhone] = useState("");

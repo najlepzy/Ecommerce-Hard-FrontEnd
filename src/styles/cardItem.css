@@ -124,5 +124,6 @@
 
 .buttons #detalleshover,
 .buttons #addCart:hover {
+    cursor: pointer;
     background-color: #4c00d1;
 }
