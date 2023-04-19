@@ -1,6 +1,6 @@
 # Hard
 
-_Hard es un ecommerce online de venta Hardware hecho en React.js, este fue realizado como un proyecto para el curso online de Coderhouse._
+_Hard es un ecommerce online de venta Hardware hecho en React.js
 
 ## DEMO 🚀
 
@@ -23,4 +23,29 @@ _La app esta desarrollada en React por lo que debe inicializarse desde la termin
 - Sweetalert2-react-content: Fue utilizada unicamente para dar una alerta cuando la orden de compra fue realizada.
 - React-loading-skeleton: Paquete que añade componentes animados de carga listos para usar rapidamente.
 
+----------------------------------------------------------------------------------------------------------------------------------------
 
+#Hard
+
+_Hard is an online ecommerce for Hardware sales made in React.js
+
+## DEMO 🚀
+
+https://hard-proyecto-final-react-lautaro-aguirre.vercel.app/
+
+Explanatory video: https://drive.google.com/file/d/1OeG3_Cm7bhCf9Or5ftJBgKen1wsLXK0m/view?usp=sharing
+
+### Explanation of the flow of the app 📋
+
+_Hard is mainly composed of five sections which are the index that encompasses the total of the ItemListContainer to show all the products in its entirety, the ItemDetail which gives us a more detailed perspective of the product, the Cart whose function is to include the selected products , and finally the Contact Form whose purpose is to generate a tracking ID that will be stored together with the customer's data in Firebase._
+
+## Deployment 📦
+
+_The app is developed in React so it must be initialized from the terminal with npm start_
+
+## LIBRARIES
+
+- React-router: Library for routing the SPA.
+- Firebase: Package used to integrate the data storage service in Google Cloud Platform allowing connection to a NoSQL database and thus store product data and customer orders.
+- Sweetalert2-react-content: It was used only to give an alert when the purchase order was placed.
+- React-loading-skeleton: Package that adds ready-to-use animated loading components quickly.
